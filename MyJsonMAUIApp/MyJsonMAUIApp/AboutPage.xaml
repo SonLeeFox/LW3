@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StudentsJsonApp.AboutPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="#0F1115">
+
+    <Grid RowDefinitions="38,*">
+
+        <Grid Grid.Row="0"
+              BackgroundColor="#16191F"
+              Padding="12,0"
+              ColumnDefinitions="Auto,*">
+            <BoxView Grid.Column="0" WidthRequest="8" HeightRequest="8" Color="#3B82F6" Margin="0,0,8,0" VerticalOptions="Center" />
+            <Label Grid.Column="1"
+                   Text="ПРО ПРОГРАМУ"
+                   TextColor="#F3F4F6"
+                   FontSize="12"
+                   FontAttributes="Bold"
+                   CharacterSpacing="0.8"
+                   VerticalOptions="Center" />
+        </Grid>
+
+        <ScrollView Grid.Row="1">
+            <Border WidthRequest="540"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Margin="20"
+                    BackgroundColor="#13161C"
+                    Stroke="#3B82F6"
+                    StrokeThickness="1"
+                    Padding="20">
+
+                <VerticalStackLayout Spacing="12">
+
+                    <Label Text="Лабораторна робота №3. Диспетчер для JSON"
+                           TextColor="#F3F4F6"
+                           FontSize="15"
+                           FontAttributes="Bold" />
+
+                    <BoxView HeightRequest="1" Color="#262B36" />
+
+                    <Grid ColumnDefinitions="130,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto" RowSpacing="4">
+                        <Label Grid.Row="0" Grid.Column="0" Text="Виконавець:" TextColor="#9CA3AF" FontSize="12" />
+                        <Label Grid.Row="0" Grid.Column="1" Text="Поліщук Михайло" TextColor="#F3F4F6" FontSize="12" FontAttributes="Bold" />
+
+                        <Label Grid.Row="1" Grid.Column="0" Text="Курс / Група:" TextColor="#9CA3AF" FontSize="12" />
+                        <Label Grid.Row="1" Grid.Column="1" Text="2 курс, група K-27" TextColor="#F3F4F6" FontSize="12" />
+
+                        <Label Grid.Row="2" Grid.Column="0" Text="Рік:" TextColor="#9CA3AF" FontSize="12" />
+                        <Label Grid.Row="2" Grid.Column="1" Text="2026" TextColor="#F3F4F6" FontSize="12" />
+
+                        <Label Grid.Row="3" Grid.Column="0" Text="Варіант:" TextColor="#9CA3AF" FontSize="12" />
+                        <Label Grid.Row="3" Grid.Column="1" Text="№6 — «Успішність студентів»" TextColor="#93C5FD" FontSize="12" FontAttributes="Bold" />
+                    </Grid>
+
+                    <BoxView HeightRequest="1" Color="#262B36" />
+
+                    <Label Text="Короткий опис програми:"
+                           TextColor="#9CA3AF"
+                           FontSize="12"
+                           FontAttributes="Bold" />
+
+                    <Label Text="Програма призначена для читання, редагування, фільтрації та збереження даних про успішність студентів (П.І.П., факультет, кафедра, курс, навчальна дисципліна, оцінка) у форматі JSON. Реалізовано серіалізацію та десеріалізацію через System.Text.Json із валідацією полів, табличне відображення даних (Grid + CollectionView), додавання та редагування записів в окремій формі, а також комбінований пошук за 5 критеріями за допомогою LINQ."
+                           TextColor="#E5E7EB"
+                           FontSize="12"
+                           LineHeight = "1.35" />
+
+                    <Border BackgroundColor="#0F1115"
+                            Stroke="#262B36"
+                            StrokeThickness="1"
+                            Padding="10">
+                        <Label Text="Примітка: основну архітектуру та код програми розроблено автором власноруч; ШІ-асистенти (Claude Sonnet 5.5, Gemini 4 Hydrogen) використовувалися як допоміжні інструменти для тестування та пошуку крайових випадків."
+                               TextColor="#9CA3AF"
+                               FontSize="11"
+                               LineHeight="1.35" />
+                    </Border>
+
+                    <Button Text="Повернутися до таблиці"
+                            Clicked="OnCloseClicked"
+                            HorizontalOptions="End"
+                            Margin="0,6,0,0"
+                            HeightRequest="30"
+                            MinimumHeightRequest="30"
+                            Padding="14,0"
+                            FontSize="11"
+                            FontAttributes="Bold"
+                            CornerRadius="0"
+                            BackgroundColor="#2563EB"
+                            TextColor="#FFFFFF" />
+
+                </VerticalStackLayout>
+            </Border>
+        </ScrollView>
+
+    </Grid>
+</ContentPage>

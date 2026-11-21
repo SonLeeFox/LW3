@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StudentsJsonApp.EditPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="#0F1115">
+
+    <Grid RowDefinitions="38,*">
+
+        <Grid Grid.Row="0"
+              BackgroundColor="#16191F"
+              Padding="12,0"
+              ColumnDefinitions="Auto,*">
+            <BoxView Grid.Column="0" WidthRequest="8" HeightRequest="8" Color="#3B82F6" Margin="0,0,8,0" VerticalOptions="Center" />
+            <Label x:Name="HeaderTitleLabel"
+                   Grid.Column="1"
+                   Text="РЕДАГУВАННЯ ЗАПИСУ"
+                   TextColor="#F3F4F6"
+                   FontSize="12"
+                   FontAttributes="Bold"
+                   CharacterSpacing="0.8"
+                   VerticalOptions="Center" />
+        </Grid>
+
+        <ScrollView Grid.Row="1">
+            <Border WidthRequest="460"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Margin="20"
+                    BackgroundColor="#13161C"
+                    Stroke="#262B36"
+                    StrokeThickness="1"
+                    Padding="18">
+
+                <VerticalStackLayout Spacing="10">
+
+                    <VerticalStackLayout Spacing="3">
+                        <Label Text="ПІБ студента" TextColor="#9CA3AF" FontSize="11" />
+                        <Border Stroke="#2D333F" StrokeThickness="1" BackgroundColor="#0F1115" HeightRequest="34">
+                            <Entry x:Name="NameEntry"
+                                   Placeholder="Наприклад: Коваленко Олена Петрівна"
+                                   PlaceholderColor="#4B5563"
+                                   TextColor="#F3F4F6"
+                                   BackgroundColor="Transparent"
+                                   FontSize="12"
+                                   MaxLength="100" />
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="3">
+                        <Label Text="Факультет" TextColor="#9CA3AF" FontSize="11" />
+                        <Border Stroke="#2D333F" StrokeThickness="1" BackgroundColor="#0F1115" HeightRequest="34">
+                            <Entry x:Name="FacultyEntry"
+                                   TextColor="#F3F4F6"
+                                   BackgroundColor="Transparent"
+                                   FontSize="12"
+                                   MaxLength="100" />
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="3">
+                        <Label Text="Кафедра" TextColor="#9CA3AF" FontSize="11" />
+                        <Border Stroke="#2D333F" StrokeThickness="1" BackgroundColor="#0F1115" HeightRequest="34">
+                            <Entry x:Name="DepartmentEntry"
+                                   TextColor="#F3F4F6"
+                                   BackgroundColor="Transparent"
+                                   FontSize="12"
+                                   MaxLength="100" />
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
+                        <VerticalStackLayout Grid.Column="0" Spacing="3">
+                            <Label Text="Курс (1–6)" TextColor="#9CA3AF" FontSize="11" />
+                            <Border Stroke="#2D333F" StrokeThickness="1" BackgroundColor="#0F1115" HeightRequest="34">
+                                <Entry x:Name="CourseEntry"
+                                       Keyboard="Numeric"
+                                       HorizontalTextAlignment="Center"
+                                       TextColor="#F3F4F6"
+                                       BackgroundColor="Transparent"
+                                       FontSize="12"
+                                       MaxLength="1" />
+                            </Border>
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout Grid.Column="1" Spacing="3">
+                            <Label Text="Оцінка (0–100)" TextColor="#9CA3AF" FontSize="11" />
+                            <Border Stroke="#2D333F" StrokeThickness="1" BackgroundColor="#0F1115" HeightRequest="34">
+                                <Entry x:Name="GradeEntry"
+                                       Keyboard="Numeric"
+                                       HorizontalTextAlignment="Center"
+                                       TextColor="#F3F4F6"
+                                       BackgroundColor="Transparent"
+                                       FontSize="12"
+                                       MaxLength="3" />
+                            </Border>
+                        </VerticalStackLayout>
+                    </Grid>
+
+                    <VerticalStackLayout Spacing="3">
+                        <Label Text="Навчальна дисципліна" TextColor="#9CA3AF" FontSize="11" />
+                        <Border Stroke="#2D333F" StrokeThickness="1" BackgroundColor="#0F1115" HeightRequest="34">
+                            <Entry x:Name="SubjectEntry"
+                                   TextColor="#F3F4F6"
+                                   BackgroundColor="Transparent"
+                                   FontSize="12"
+                                   MaxLength="100" />
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <Label x:Name="ErrorLabel" TextColor="#FCA5A5" FontSize="11" />
+
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="8" Margin="0,6,0,0">
+                        <Button Grid.Column="0"
+                                Text="Зберегти"
+                                Clicked="OnSaveClicked"
+                                HeightRequest="32"
+                                MinimumHeightRequest="32"
+                                FontSize="12"
+                                FontAttributes="Bold"
+                                CornerRadius="0"
+                                BackgroundColor="#2563EB"
+                                TextColor="#FFFFFF" />
+                        <Button Grid.Column="1"
+                                Text="Скасувати"
+                                Clicked="OnCancelClicked"
+                                HeightRequest="32"
+                                MinimumHeightRequest="32"
+                                FontSize="12"
+                                CornerRadius="0"
+                                BackgroundColor="#1F242D"
+                                TextColor="#D1D5DB"
+                                BorderColor="#2D333F"
+                                BorderWidth="1" />
+                    </Grid>
+
+                </VerticalStackLayout>
+            </Border>
+        </ScrollView>
+
+    </Grid>
+</ContentPage>
